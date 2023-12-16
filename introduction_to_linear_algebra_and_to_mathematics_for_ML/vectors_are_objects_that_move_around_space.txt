@@ -1,0 +1,124 @@
+when refering to a vectors there two characteristics that
+we can distinguish:
+size and dot product. The size of a vector is the length
+of the vector. The dot prodcut is also called the scalar
+product. The dot product of two vectors is a scalar.
+for example, a vector exists in a space that is not defined,
+but we can do it by drawing to orthogonal lines.
+and the the vector would be measured in any units we want.
+and it will be the diagonal of the rectangle that is created
+orthogonal space delimited by i,j and vector r= ai+bj.
+and according to pitagoras theorem we can calculate the
+length of the vector r.
+
+the dot product is :
+vector r = 3,2, so it has components ri and rj.
+ri = 3 and rj = 2 
+vector s = -1,2 has components si and sj.
+si = -1 and sj = 2
+And so the dot product would be:
+r*s = ri*si + rj*sj = 3*(-1) + 2*2 = -3 + 4 = 1
+so the dot product is a scalar.
+dot product has some properties:
+conmutative: r*s = s*r
+distributive: r*(s+t) = r*s + r*t
+and this allso applies if r,s,t are vectors too so it would 
+be: r*(s+t) =r1*(s1+t1) + r2*(s2+t2) = r1*s1 + r1*t1 + r2*s2 + r2*t2 and so on...
+other propertie is the associative propertie:
+r*(s*t) = (r*s)*t where s is now an scalar.
+
+### Cosine and dot product----------------
+remember that c^2 = a^2 + b^2 - 2ab*cos(theta)
+the dot product is the same as the cosine of the angle between the vectors.
+the dot product of orthogonal vectors is 0.
+and if the vectors and in opposite directions the dot product is negative.
+and if the vectors are in the same direction the dot product is positive.
+
+facts about vectors:
+--we can find the angle between two vectors by using the dot product.
+--cos(theta) = r(dot)s / |r|*|s|(theta)
+--the size of a vector is the square root of the dot product of the vector with itself.
+--the vector projection of s onto r is equal to the 
+scalar projection of s onto r times the unit vector in the direction of r.
+--the vector projection is equal to the scalar projection times the unit vector in the direction of r.
+unit vector is a vector that has a length of 1 and equals= vector/|vector|
+--theta= r1 dot r2/|r1|*|r2|, if cos(theta) = 0 then theta = 90 degrees.
+
+
+facts about dot product:
+1. The dot product of two vectors is directly related to the cosine of the angle between them. 
+Specifically, the dot product of two vectors A and B is equal to the product of their magnitudes 
+(lengths) multiplied by the cosine of the angle theta between them. A · B = |A| * |B| * cos(theta)
+This relationship allows us to determine the angle between two vectors using the dot product. 
+2.helps us understand the relationship and orientation between the vectors.
+3. The dot product of two vectors is a scalar value that represents the degree of 
+similarity or correlation between the vectors.
+ 
+###projection-------------------------
+
+
+the projection of a vector r onto a vector s
+
+a vector is defined in a space by the basis vectors i and j.
+the vector r is defined by the components ri and rj.
+but what if we had other basis vectors than i and j?
+like u and w, then r would be defined by the components ru and rw.
+we can know the components of r in u and w if we know the relationship between i,j and u,w.
+
+to know the projection of r onto u,w space we need to know the components of r in u,w space.
+we can use the scalar projection of r onto u space and then get the vector projection of r onto u space.
+, and again repeat the process for w space.
+this is "changing basis" or "change of basis".
+
+#example:
+we have a vector r = 5,-1 and we want to know the components of r in u,w space.
+where u=1,1 and w=1,-1
+length of vector u= sqrt(1^2 + 1^2) = sqrt(2)
+#but for some reason the professor is not taking the sqrt from the size of the vector so its just 2.
+we need to know the scalar projection of r onto u and w.
+scalar projection of r onto u = r dot u/|u| = 5*1 + (-1)*1 / sqrt(1^2 + 1^2) = 4/2
+where the formula to get the scalar projection of r onto u is:
+r dot u/|u|, where |u| refers to the length of the vector u.
+scalar projection of r onto w = r dot w/|w| = 5*1 + (-1)*(-1) / sqrt(1^2 + (-1)^2) = 6/2
+unit vector of u = 1/sqrt(2),1/sqrt(2)
+unit vector of w = 1/sqrt(2),-1/sqrt(2)
+formula to get unit vector = vector/|vector|, where |vector| refers to the length of the vector.
+(obtained from the dot product of a vector with itself)
+now we need to get the vector projection of r onto u and w.
+vector projection of r onto u = scalar projection of r onto u * unit vector of u = 4/sqrt(2) * 1/sqrt(2),1/sqrt(2) = 2,2
+vector projection of r onto w = scalar projection of r onto w * unit vector of w = 6/sqrt(2) * 1/sqrt(2),-1/sqrt(2) = 3,-3
+and now the components of r in u,w space are:
+ru = 2 and rw = 3, these two values are obtained from both of the scalar projections of r onto u and w.
+#example 2
+r= 10,-5, u=3,4, and w= 4,-3
+scalar projection of r onto u = r dot u/|u| = 10*3 + (-5)*4 / sqrt(3^2 + 4^2) = 10/25 = 10/25 = 2/5
+scalar projection of r onto w = r dot w/|w| = 10*4 + (-5)*(-3) / sqrt(4^2 + (-3)^2) = 55/25 = 11/5
+unit vector of u = 3/5,4/5
+unit vector of w = 4/5,-3/5
+components of r in u,w space are:
+ruw=2/5,11/5
+#example 3
+r=2,2,u=-3,1,w=1,3
+scalar projection of r onto u = r dot u/|u| = 2*(-3) + 2*1 / (-3)^2 + 1^2 = -4/10 = -2/5
+scalar projection of r onto w = r dot w/|w| = 2*1 + 2*3 / 1^2 + 3^2 = 8/10 = 4/5
+#example 4
+r=1,1,1,u=2,1,0,w=1,-2,-1,z=-1,2,-5
+scalar projection of r onto u = r dot u/|u| = 1*2 + 1*1 + 1*0 / 2^2 + 1^2 + 0^2 = 3/5
+scalar projection of r onto w = r dot w/|w| = 1*1 + 1*(-2) + 1*(-1) / 1^2 + (-2)^2 + (-1)^2 = -2/6 = -1/3
+scalar projection of r onto z = r dot z/|z| = 1*(-1) + 1*2 + 1*(-5) / (-1)^2 + 2^2 + (-5)^2 = -4/30 = -2/15
+
+
+
+###Basis, vector space and linear independence-----------------
+
+a basis is a set of n vector which are linearly independent and span the space.
+the space is n-dimensional
+for example b1 and b2 span the space, but if we add b3, b3 is a linear independent vector
+if we can not describe b3 in terms of any combination of b1 and b2.
+b3 != a1b1 + a2b2
+basis vector doesn't have to be orthogonal, but it's1 a lot easier
+if they are.
+
+###applications of changing basis-----------------
+the goal of the learning from our neural network is gonna be to write 
+a set of basis vectors that extract the most information from the data.
