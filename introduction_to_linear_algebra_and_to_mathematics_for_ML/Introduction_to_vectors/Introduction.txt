@@ -1,0 +1,54 @@
+The first thing we have to is to understand 
+vectors.
+
+takigs as an example the classical histogram of
+height (which has a normal distribution).
+How do we fit this histogram into an equation?
+It can be explain with 2 parameters:
+Mu and sigma.
+But how do we fit a normal distribution so as
+it fits our data? (only changing the 2 parameters)
+(missmatching the distribution of our data can understimate 
+or overstimate values in our data)
+
+We can plot the values of Mu vs Sigma where (0,0)
+is the perfect fitting to our data.
+for example a point (1,1) means that we believe that
+they're taller than they really are (overestimating)
+and that the variance is bigger than it really is.
+(x=Mu, y=Sigma).
+
+Once we have defined the function that describes our
+data, we can asses its "goodness" or "badness"
+by changing the parameters and see how the function
+changes.
+
+A model is only considered good if it fits the measured data well.
+some specific values for the parameters will be better than others.
+we need a way to quantify how good a model is.
+one way of doing this is to calculate the residuals, which is
+the difference between the measured data and the modelled prediction.
+for each histogram bin.
+
+the performance of a model can be quantified in a single number.
+One measure we can use is the sum of the squared residuals. SSR
+Here we take all the residuals (the difference between the measured and the predicted data), square them and add them up.
+In the language of vectors it can be written as:
+SSR = (y - y_hat)^2
+where y is the measured data and y_hat is the predicted data.
+
+And then, what are vectors?
+it can exist in a physical space, but it can also exist in data space.
+for example, a vector can be a list of numbers that represent the
+values of features or characteristics.
+is a geometric object that has both magnitude and direction. and starts from the origin..
+
+these vector made of characteristics follows the
+the vector operations: such as addition, subtraction, multiplication, etc.
+
+example: a vector can be a list of features of a house:
+square meters, number of rooms, number of bathrooms, etc.
+if we have two houses that have the same number of rooms and bathrooms
+we can multiply the vector of the original house by 2 and we will have
+the new vector (AS A DATA REPRESENTATION)
+
