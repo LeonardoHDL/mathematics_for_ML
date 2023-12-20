@@ -1,0 +1,188 @@
+###Introduction to Matrices
+matrices are objects that let us solve simultaneous equations. They are also used in many other areas of mathematics. 
+A matrix is a rectangular array of numbers. The numbers in the matrix are called its entries or its elements. 
+The horizontal and vertical lines of entries in a matrix are called rows and columns, respectively. 
+The size of a matrix is given in its number of rows and its number of columns.
+ For example, the matrix below has size 2 × 3 (read "two by three"), because it has two rows and three columns.
+for example:
+2a+3b=8
+10a+1b=13
+can be written as:
+#notice that 2,3;10,1 is the first 2x2 matrix, then multiplied by 2x1 vector
+and the solution is a vector of 2x1
+[2 3] [a] = [8]
+[10 1] [b] = [13]
+then the multiplication will look like a matrix of simultaneous equations.
+An equation system is a function that operates on input vectors
+and gives us other output vectors. the set of simultaneous equations
+is asking in fact what vector do I need to produce a specific output vector. (8,13)
+and the vectors that we need is (a b)
+
+Linear algebra is a mathematical system for manipulating of the space that is described by vectors
+
+--------------------------------------------------------------------
+### How matrices transform space
+Now we'll look at different types of matrices and what they do to space. 
+And what happens if we apply one matrix transformation and then another, which is termed composition. 
+Now because we could make any vector out of a vector sum of the scaled versions of e1 hat and e2 hat. 
+Then what that means is the result of the transformation is just going to be some sum of the transform 
+vectors, which I'm calling e1 hat and e2 hat. This is a bit hard to see but what it means is that the 
+grid lines of our space stay parallel and evenly spaced. They might be stretched or sheared, 
+but the origin stays where it is and there isn't any curviness to the space, it doesn't get warped.
+
+So that is if I write down the matrix as capital A and the vector its transforming is r, 
+whatever it was. a b in our apples and bananas problem. And that gives me some altered version.
+We said it was 8 13 before, but I'm going to call it r transformed or r prime. 
+Then we can look at what happens when I do algebra with it. So if I multiply r by some number, 
+just a number.
+
+--------------------------------------------------------------------
+###types of matrix transformations
+A matrix is just compose of the basis vectors of the space.
+Identity Matrix=[1 0;0 1][x y]=[x y] and leaves the space as it was.
+Scaling Matrix=[2 0;0 2][x y]=[2x 2y] and stretches the space by 2.
+a fraction will shrink the space.
+What happens is I have a matrix that has a negative number in it.
+for example:
+A=[-1 0;0 2][x y]=[-x 2y] and flips the space.
+and for example:
+A=[1 0;0 -1][x y]=[x -y] and flips the space.(It's called an inversion)
+
+##matrix multiplication
+It's to note that A1 multpilied by A2 it's not the same than A2 multplied by A1. It has no conmutative
+propertie. We must remember that multiplying a matrix for another is like switching the space.
+We can rotate, mirror and sheer our space when multplying by matrices
+
+##mirrors
+A= -1 0; 0 1 flips the x axis (vertical mirror)
+A= 1 0 ; 0 -1 flips the y axis (horizontal mirro)
+
+##shears
+what if we want to transform 1 0;0 1 to 1 0;1 1 (that creates instead of a square a parallelogram)
+
+## rotation
+A=1 0;0 1 how to rotate 90 degrees anticlockwise?
+A=0 -1; 1 0 # realize that x axis (before 1 0) rotated 90 degrees to the left, so no it will ocupy y axis (0 1) and y axis now is -1 0
+
+These transformations are useful for example in images where don't
+forget that an image is just a matrix of pixels so we can play with images in with this transformations
+
+We can apply a series of transformations to a vector, for example:
+A2(A1r)
+where A1= 0 1; -1 0 and A2= -1 0; 0 1 
+A2A1=[-1 0; 0 1]*[0 1;-1 0]=0 -1; -1 0
+The order of transformations matter, since it's not the same A2A1r and A1A2r
+actually A1A2=0 1;1 0
+
+matrices are associative but no conmutative
+
+---------------------------------------------------------------------
+##Solving an apple and bannanas problem
+2a + 3b = 8
+10a + 1 b = 13
+where a= apples, and b= bannanas
+and this could be presented as a matrix
+[2 3;10 1][a;b]=[8;13]
+Ar=s
+A^-1A=I(identity matrix)
+so 
+(A^-1)Ar=(A^-1)s
+so
+(I)r=(A^-1)s
+Now we will se how this idea of elimination helps us finding the inverse matrix.
+(A^-1)A=I
+for example:
+A*B=I
+#specific problem
+A=[1 1 3; 1 2 4; 1 1 2]
+r=[a;b;c]
+s=[15;21;13]
+
+so this would be the matrix
+1st| 1 1 3 a   15
+2nd| 1 2 4 b = 21
+3rd| 1 1 2 c   13
+
+I can take row one of row two
+
+1st| 1 1  3  a   15
+2nd| 0 1  1  b =  6
+3rd| 0 0 -1  c   -2
+#realize that -c = -2, so I can multiply only that row by -1 and  get that c=2
+#this is called a triangular matrix because all below the leading diagonal is zero
+#now we will perfom back substitution which means that I can take the value of C and put it in the first two rows
+
+1st| 1 1 0 a   9
+2nd| 0 1 0 b = 4
+3rd| 0 0 1 c   2
+#realize that now we have obtained the value of b
+and again I can take that value and put in the first row
+
+1st| 1 0 0 a   5
+2nd| 0 1 0 b = 4
+3rd| 0 0 1 c   2
+#realize that we have found the identity matrix
+the processes that we did were:
+1. Elimination to get the triangular matrix
+2. back substitution putting the number of c in the first rows and so on..
+### I HAVE ONLY FOUND THE RESULT FOR THIS SPECIFIC VECTOR S
+but how can I ind a general answer? (for any S)
+
+----------------------------------------------------------------
+##Going from Gaussian Elimination to finding the inverse matrix 
+
+So to obtain the identity matrix we have to multiply our original matrix by the inverse matrix
+(A^-1)A=I
+AB=I, where A^-1=B
+A=
+1   1   3
+1   2   4
+1   1   2
+
+B=
+b11 b12 b13
+b21 b22 b23
+b31 b32 b33
+
+I=
+1   0    0
+0   1    0
+0   0    1
+
+so for out matrix A, we can calculate the new matrix A`, which has the same entries as A, however the second row of A` is the second of row A minus the first row of A, and the third row of A` is the third row of A minus the first row of A
+A`=
+1  1  3
+0  1  1 
+0  0 -1
+and I`=
+ 1  0  0
+-1  1  0
+-1  0  1
+#realize we can multiply the third row by -1 since in A` we already have a triangular matrix
+#we can Again perform the back substitution
+A``=
+1  1  0 #you are multiplying the third row by 3 to take the third  
+0  1  0 #column =0 on the first row
+0  0  1
+and I``=
+-2  0  3 ## remeber you took 3 times the third row off the 1st row
+-2  1  1 # realize that despite of taking -1 on the 3rd column it
+ 1  0 -1 #is positive since -(-1)=1
+
+
+FInally, now I take the second row from the first row
+A```=
+ 1 0 0
+ 0 1 0
+ 0 0 1
+I```=
+ 0 -1  2
+-2  1  1
+ 1  0 -1
+
+I have transformed A=A```=I
+and I it has algo undergone some transformations to I``` which is equal to inverse matrix of A
+I```= A^-1
+
+This is one of the most computationally efficient way to find the inverse matrix in bigger datasets
+
