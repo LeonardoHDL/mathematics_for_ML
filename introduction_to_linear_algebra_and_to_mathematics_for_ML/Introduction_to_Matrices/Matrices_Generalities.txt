@@ -1,0 +1,33 @@
+#Introduction: Einstein summation convention and the symmetry 
+of the dot product
+
+There's other way to write matrix transformations down, it's called the einstein Summation Convention. This convention writed down what the actual operations are on the elements of a matrix. Also lets us ldeal with no square matrices.
+
+Regular convention:
+A=
+a11 a12 a1n...
+a21 a22 ...
+an1 an2 ...
+
+B=
+b11 b12 b1n
+b21 b22 b2n
+bn1 bn2 bnn
+
+(ab)23= a21b13+a22b23+a2n+bn3
+
+Different than the Einstein Summation that it's:
+Cik=aijbjk
+This allows us to multiply matrices with different shapes
+Which in this case woul be J
+So as long as the matrices have the same number of entries in J we can multiply them
+
+Why are there similarities between matrix transformation and dot product?
+Let's suppose a vector U[u1,u2]
+In axis vectors E^[1 0;0 1]
+
+If we project U onto E1 and E1 onto U, we get a dot where the projections crosses.
+
+
+
+
