@@ -1,0 +1,10 @@
+Let's have a set of vectors V[v1,v2,vn], and they span the space. Let's assume the linear independence. (Remember that if they aren't independent, then their determinant will be zero)
+
+The Gram-Schmidt process helps us contruct an orthonormal space
+Let's take V1
+e1=v1/|v1| #it's a  normalized of v1:
+v2=v2 dot e1
+
+
+
+
